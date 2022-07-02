@@ -1,6 +1,6 @@
 var array = [];
 
-for (let i = 10000; i > 0; i--) {
+for (let i = 10000000; i > 0; i--) {
   array.push(i);
 }
 
@@ -20,4 +20,6 @@ function sort(array, n) {
   return array;
 }
 
-console.log(sort(array, 10000));
+console.log(array.sort(function(a,b){ return a-b}));
+console.log(sort(array, 10000000));
+

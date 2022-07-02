@@ -2,12 +2,21 @@ function tripletSum(arr, n, sum) {
   let i = 0;
   let r = n - 1;
   let l = i + 1;
+  if( arr.length < 3){
+    return [];
+  }
   arr = arr.sort(function (a, b) {
     return a - b;
   });
+  let result = new Set();
   while (i < r) {
     if (parseInt(arr[i]) + parseInt(arr[l]) + parseInt(arr[r]) == sum) {
-      return true;
+        if(!result.has([arr[i],arr[l],arr[r]])){
+              result.add([arr[i],arr[l],arr[r]]) ;
+        }
+        ++i;
+      l=i+1;
+     r= n-1;
     } else if (parseInt(arr[i]) + parseInt(arr[l]) + parseInt(arr[r]) > sum) {
       r--;
     } else if (parseInt(arr[i]) + parseInt(arr[l]) + parseInt(arr[r]) < sum) {
@@ -20,7 +29,7 @@ function tripletSum(arr, n, sum) {
     }
   }
 
-  return false;
+  return result;
 }
 
 const array =
@@ -28,4 +37,4 @@ const array =
     " "
   );
 
-console.log(tripletSum(array, 24, 986));
+console.log(tripletSum([-2,0,1,1,2],[-2,0,1,1,2].length, 0));

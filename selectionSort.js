@@ -21,5 +21,6 @@ function selectionSort(array) {
 
   return array;
 }
+console.log()
 
 console.log(selectionSort(array));
