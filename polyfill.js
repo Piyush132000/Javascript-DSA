@@ -1,3 +1,8 @@
+
+var user3 = {
+    firstName:""
+}
+
 let user = {
     firstName:"Piyush",
     lastName:"Agarwal",
