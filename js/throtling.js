@@ -4,8 +4,6 @@
 var disableButton = false;
 
 function throtling(fn, timer){
-    debugger;
-   
     return function(...args){
         if(!disableButton){
         disableButton = true;
