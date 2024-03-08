@@ -153,6 +153,20 @@ class LinkedList {
       }
     }
   }
+
+  getMiddleElementData(){
+    let currentNode = this.head;
+    let middleIndex = Math.floor(this.size/2);
+    console.log(middleIndex);
+    let currentIndex =0;
+    while(currentIndex != middleIndex){
+        currentIndex++;
+        currentNode = currentNode.next;
+    }
+
+    return currentNode.data;
+
+  }
 }
 
 const list = new LinkedList();
@@ -166,6 +180,7 @@ list.printList();
 list.removeByData("String");
 
 list.addNodeInList("data", 5);
+console.log(list.getMiddleElementData());
 list.printList();
 
 console.log(list.size);
