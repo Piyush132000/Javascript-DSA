@@ -58,7 +58,12 @@ function merge(array, left, mid, right) {
 
 }
 
+const array = [ 78 , 90 , 56 , 45];
+//console.log(sort.selectionSort(array , array.length));
+
+console.log(mergeSort(array, 0 , array.length-1))
+console.log(mergeSort(array, 0 , array.length-1))
 
 
-
+console.log(mergeSort([2, 3, 4, 5, 6, 3, 4, 3, 2, 1, 3], 0, 10));
 console.log(mergeSort([2, 3, 4, 5, 6, 3, 4, 3, 2, 1, 3], 0, 10));
