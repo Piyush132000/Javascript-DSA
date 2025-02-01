@@ -1,4 +1,4 @@
-import { User } from "./Users/User";
+import { User, UserDetails } from "./Users/User";
 import { UsersHandler } from "./Users/UsersHandler";
 
 function getUserDetails<Type>(user: Type[]): Type {
@@ -73,14 +73,13 @@ userHanlder.createUser({
   id: crypto.randomUUID(),
 });
 
+let userDetails:UserDetails[]=[];
 try {
-    let password:string="";
+    
   userHanlder.getUser().forEach((user: User) => {
-    if (user.name == "Satoshi") {
-          password = user.passward;
-    }
+      userDetails.push(user.userDetails);
   });
-  console.log(password)
+  console.log(userDetails)
 } catch (error) {
   console.log(error);
 }

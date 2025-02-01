@@ -1,4 +1,4 @@
-stash "use strict";
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const UsersHandler_1 = require("./Users/UsersHandler");
 function getUserDetails(user) {
@@ -61,14 +61,12 @@ userHanlder.createUser({
     password: 'Aasaswdwkbh',
     id: crypto.randomUUID(),
 });
+let userDetails = [];
 try {
-    let password = "";
     userHanlder.getUser().forEach((user) => {
-        if (user.name == "Satoshi") {
-            password = user.passward;
-        }
+        userDetails.push(user.userDetails);
     });
-    console.log(password);
+    console.log(userDetails);
 }
 catch (error) {
     console.log(error);
