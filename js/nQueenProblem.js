@@ -55,4 +55,4 @@ let array = [
 
 const obj = new NQueen(4, array);
 
-console.log(obj.queenBox);
+console.log(obj.nQueen());

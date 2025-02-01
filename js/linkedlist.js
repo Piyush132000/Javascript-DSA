@@ -175,12 +175,7 @@ list.addNode(30);
 list.addNode(30);
 list.addNodeOnSpecificIndex(40, 0);
 
-list.addNode("String");
-list.printList();
-list.removeByData("String");
-
-list.addNodeInList("data", 5);
-console.log(list.getMiddleElementData());
+list.removeAt(2)
 list.printList();
 
 console.log(list.size);

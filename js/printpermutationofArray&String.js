@@ -21,4 +21,4 @@ function permute( nums){
 
 
 
-console.log(permute([3 , 2 ,1]));
+console.log(permute([1,1,2]));

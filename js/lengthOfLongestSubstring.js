@@ -1,49 +1,39 @@
-// JavaScript program to find the length of the
-// longest substring without repeating
-// characters
-// This function returns true if all characters in
-// str[i..j] are distinct, otherwise returns false
-function areDistinct(str, i, j)
-{
-	
-	// Note : Default values in visited are false
-	var visited = new Array(256);
 
-	for(var k = i; k <= j; k++)
-	{
-		if (visited[str.charAt(k) ] == true)
+function areDistincit(str, i , j){
+
+	let visited = new Array(256);
+
+	for(let k =i; k <=j; k++){
+		if(visited[str.charAt(k)]){
 			return false;
-			
-		visited[str.charAt(k)] = true;
+		}
+		visited[str.charAt(k)]= true;
 	}
-	return true;
+
+	return true
 }
 
-// Returns length of the longest substring
-// with all distinct characters.
-function longestUniqueSubsttr(str)
-{
-	var n = str.length;
-	
-	// Result
-	var res = 0; 
-	
-	for(var i = 0; i < n; i++)
-		for(var j = i; j < n; j++)
-			if (areDistinct(str, i, j))
-				res = Math.max(res, j - i + 1);
-				
-	return res;
+
+
+
+function longestUniqueSubstring(str){
+
+	let n = str.length;
+
+	let length =0
+	for(let i =0; i < n ; i++){
+		for(let j = i ; j < n; j++){
+
+			if( areDistincit(str, i , j)){
+				length = Math.max( length, j-i+1);
+			}
+		}
+	}
+
+	return length;
 }
 
-// Driver code
-	var str = "geeksforgeeks";
-	console.log("The input string is " + str);
 
-	var len = longestUniqueSubsttr(str);
-	
-	console.log("The length of the longest " +
-					"non-repeating character " + 
-					"substring is " + len);
 
-// This code is contributed by shivanisinghss2110.
+
+console.log(longestUniqueSubstring("geeksforgeeks"))

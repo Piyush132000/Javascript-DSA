@@ -3,20 +3,24 @@
 
 var answer = new Array();
 
-function combinationSum(array, arr, start, k , answer) {
-  if (start == array.length) {
-    if (k == 0) {
-      answer.push([...arr]);
+function combinationSum(array, ds, start, sum , answer) {
+
+  if( start == array.length ){
+
+    if(sum == 0){
+      answer.push([...ds])
     }
-    return;
+   return;
   }
 
-  if (array[start] <= k) {
-    arr.push(array[start]);
-    combinationSum(array, arr, start, k - array[start] , answer);
-    arr.pop();
+  if(array[start] <= sum){
+    ds.push(array[start]);
+    combinationSum(array, ds, start+1, sum-array[start], answer);
+    ds.pop()
   }
-  combinationSum(array, arr, start+1, k , answer);
+  combinationSum(array, ds, start+1, sum , answer )
+
+ 
 }
 
 combinationSum([2, 2, 3, 4, 5, 7], [], 0, 7, answer);
