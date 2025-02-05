@@ -10,18 +10,16 @@ class Solution {
 
   permute(array, index, answer) {
     if (array.length === index) {
-      let ds = new Array();
-      for (let i = 0; i < array.length; i++) {
-        ds.push(array[i]);
-      }
-      answer.push(ds);
+     
+      answer.push([...array]);
       return;
     }
 
     for (let i = index; i < array.length; i++) {
-      this.swap(i, index);
+      if(i > index && array[i]===array[i-1]) continue;
+      [array[i], array[index]]=[array[index],array[i]]
       this.permute(array, index + 1, answer);
-      this.swap(i, index);
+      [array[i], array[index]]=[array[index],array[i]]
     }
   }
 
@@ -33,6 +31,6 @@ class Solution {
 }
 
 let answer = new Array();
-const obj = new Solution([1, 2, 3], 0, answer);
+const obj = new Solution([3,3,0,3], 0, answer);
 
 console.log(answer);
