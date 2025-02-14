@@ -39,36 +39,4 @@ console.log(Size);
 const a = Size.Small;
 console.log(a);
 const userHanlder = new UsersHandler_1.UsersHandler();
-userHanlder.createUser({
-    name: "Piyush",
-    age: 20,
-    lastName: "Agrawal",
-    firstName: "Piyush",
-    id: crypto.randomUUID(),
-});
-userHanlder.createUser({
-    name: "Piyush",
-    age: 20,
-    lastName: "Agrawal",
-    firstName: "Piyush",
-    id: crypto.randomUUID(),
-});
-userHanlder.createUser({
-    name: "Satoshi",
-    age: 20,
-    lastName: "Agrawal",
-    firstName: "Piyush",
-    password: 'Aasaswdwkbh',
-    id: crypto.randomUUID(),
-});
-let userDetails = [];
-try {
-    userHanlder.getUser().forEach((user) => {
-        userDetails.push(user.userDetails);
-    });
-    console.log(userDetails);
-}
-catch (error) {
-    console.log(error);
-}
 //# sourceMappingURL=index.js.map
